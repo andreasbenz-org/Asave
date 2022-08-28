@@ -1,0 +1,35 @@
+{
+  "name": "asave",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000A\u0000s\u0000a\u0000v\u0000e\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreasbenz-org/Asave.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreasbenz-org/Asave/issues"
+  },
+  "homepage": "https://github.com/andreasbenz-org/Asave#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "css-loader": "^6.7.1",
+    "postcss-loader": "^7.0.1",
+    "sass": "^1.54.5",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.0"
+  }
+}
