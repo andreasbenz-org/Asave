@@ -1,5 +1,27 @@
+
+
+$enable-gradients: true;
+$enable-shadows: true;
+
+// Customize some defaults
+
+$body-color: #333;
+$body-bg: #fff;
+
+$success: #7952b3;
+$primary: #c3d900;
+$danger: #ff4136;
+
 @import "~bootstrap/scss/bootstrap";
 
-body {
-    
+
+//
+// Custom styles
+//
+
+
+
+// Style Bootstrap icons
+.bi {
+  fill: currentColor;
 }
