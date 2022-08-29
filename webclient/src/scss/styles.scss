@@ -1,27 +1,218 @@
-
-
 $enable-gradients: true;
 $enable-shadows: true;
 
 // Customize some defaults
 
-$body-color: #333;
-$body-bg: #fff;
-
+$body-color: rgb(255, 255, 255);
+$body-bg: #ffffff;
+$bg-light: #051136;
+$dark: #051136;
 $success: #7952b3;
-$primary: #c3d900;
+$primary: #FFFF39;
 $danger: #ff4136;
 
 @import "~bootstrap/scss/bootstrap";
 
+body {
+  background-image: url('../assets/imgs/background.png');
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
 
-//
-// Custom styles
-//
+}
+
+.navbar {
+  border-bottom: 1px solid $primary;
+}
+
+.hero-section {
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.img-container {
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 350px;
+  max-height: 350px;
+  width: 100%;
+}
+
+.carousel-item {
+  height: 85vh;
+  padding: 1rem;
+}
+
+.hero-logo {
+  background-image: url('../assets/imgs/asave-logo-neu.png');
+
+}
+
+.hero-event {
+  background-image: url('../assets/imgs/hero-event.png');
+
+}
 
 
 
-// Style Bootstrap icons
-.bi {
-  fill: currentColor;
+.divider {
+  border: 0;
+  border-top: 1px solid $primary;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.service-container {
+  cursor: pointer;
+}
+
+.service-content {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-decoration: none;
+}
+
+.service-description {
+  padding: 16px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 0;
+  text-align: start;
+  font-size: 22px;
+}
+
+#service-a {
+  background-image: url('../assets/imgs/revierstreife-min.png');
+
+}
+
+#service-b {
+  background-image: url('../assets/imgs/objektschutz-min.png');
+}
+
+#service-c {
+  background-image: url('../assets/imgs/portierdienst-min.png');
+}
+
+#service-d {
+  background-image: url('../assets/imgs/veranstaltungsschutz-min.png');
+}
+
+#service-e {
+  background-image: url('../assets/imgs/berufsdetektei-min.png');
+
+}
+
+#service-f {
+  background-image: url('../assets/imgs/personenschutz-min.png');
+
+}
+
+#service-g {
+  background-image: url('../assets/imgs/jetztanfragen-min.png');
+
+}
+
+#service-h {
+  background-image: url('../assets/imgs/jetztbewerben-min.png');
+
+}
+.hero-xl-description {
+  display: none;
+}
+.contact-form {
+  background-color: rgba(4, 4, 4, 0.5);
+  padding: 1rem;
+  margin-bottom: 80px;
+
+}
+
+.footer {
+  background: white;
+  color: black;
+  padding: 16px;
+  padding-top: 80px;
+}
+
+@include media-breakpoint-up(lg) {
+  .carousel-item {
+    background-color: rgba(4, 4, 4, 0.5);
+    justify-content: space-between;
+    padding: 40px;
+    height: 70vh;
+  }
+
+  .hero-description {
+    text-align: start;
+  }
+
+  .contact-form {
+    padding: 40px;
+
+    .contact-form-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .img-container {
+    flex: 1;
+    height: 60%;
+    max-height: 500px;
+  }
+
+  .hero-description {
+    flex: 1;
+  }
+  .hero-xl-description {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 20px;
+    border-bottom: 1px solid $primary;
+    display: block;
+    line-height: 2rem;
+    margin-bottom: 16px;
+  }
+
+}
+
+
+.footer-list {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    margin: 0;
+    color: black;
+  }
+}
+
+.footer-terms {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .term-links {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  #designed-by {
+    color: $danger  !important;
+  }
 }

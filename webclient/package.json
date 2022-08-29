@@ -1,11 +1,12 @@
 {
   "name": "asave",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000A\u0000s\u0000a\u0000v\u0000e\u0000\r\u0000 \u0000",
+  "description": "Asave Security Service GmbH",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.8",
     "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
     "postcss-loader": "^7.0.1",
     "sass": "^1.54.5",
     "sass-loader": "^13.0.2",
