@@ -1,17 +1,7 @@
-$enable-gradients: true;
-$enable-shadows: true;
 
-// Customize some defaults
-
-$body-color: rgb(255, 255, 255);
-$body-bg: #ffffff;
-$bg-light: #051136;
-$dark: #051136;
-$success: #7952b3;
-$primary: #FFFF39;
-$danger: #ff4136;
-
+@import 'config';
 @import "~bootstrap/scss/bootstrap";
+@import "templates/service.scss";
 
 body {
   background-image: url('../assets/imgs/background.png');
@@ -19,12 +9,21 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   box-sizing: border-box;
-
 }
-
 .navbar {
   border-bottom: 1px solid $primary;
 }
+
+
+.navbar-spacing{
+  min-height: 62.5px;
+  width: 100%;
+}
+
+.bg-dark-transparent{
+ background-color: $bg-transparent;
+}
+
 
 .hero-section {
   padding: 0;
@@ -70,6 +69,7 @@ body {
 
 .service-container {
   cursor: pointer;
+  text-decoration: none;
 }
 
 .service-content {
@@ -87,45 +87,45 @@ body {
 .service-description {
   padding: 16px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: $bg-transparent;
   margin: 0;
   text-align: start;
   font-size: 22px;
 }
 
-#service-a {
+.service-a {
   background-image: url('../assets/imgs/revierstreife-min.png');
 
 }
 
-#service-b {
+.service-b {
   background-image: url('../assets/imgs/objektschutz-min.png');
 }
 
-#service-c {
+.service-c {
   background-image: url('../assets/imgs/portierdienst-min.png');
 }
 
-#service-d {
+.service-d {
   background-image: url('../assets/imgs/veranstaltungsschutz-min.png');
 }
 
-#service-e {
+.service-e {
   background-image: url('../assets/imgs/berufsdetektei-min.png');
 
 }
 
-#service-f {
+.service-f {
   background-image: url('../assets/imgs/personenschutz-min.png');
 
 }
 
-#service-g {
+.service-g {
   background-image: url('../assets/imgs/jetztanfragen-min.png');
 
 }
 
-#service-h {
+.service-h {
   background-image: url('../assets/imgs/jetztbewerben-min.png');
 
 }
@@ -215,4 +215,8 @@ body {
   #designed-by {
     color: $danger  !important;
   }
+}
+
+.hero-button{
+  max-width: 440px;
 }

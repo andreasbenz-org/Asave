@@ -15,5 +15,7 @@ navbarLogoImg.src = AsaveLogo;
 const footerCertImg = document.getElementById('footer-certificate');
 footerCertImg.src = Certificate;
 
+
+
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap'
