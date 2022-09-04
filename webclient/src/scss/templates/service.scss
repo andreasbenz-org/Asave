@@ -1,47 +1,10 @@
 @import '../config';
 
-.service-hero-section {
-    padding: 16px;
-    padding-top: calc(62.5px + 16px);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-
-    .service-hero {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 16px;
-
-        .service-hero-image {
-            width: 100;
-            flex: 1;
-            background-position: center center;
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-
-        .service-hero-text {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            .service-hero-button {
-                display: none;
-            }
-        }
-    }
-}
-
 .service-description-section {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 16px;
- 
-    margin-bottom: 32px;
 }
 
 .service-description-content {
@@ -49,38 +12,12 @@
     background-color: $bg-transparent;
 }
 
-.contact-section {
-    padding: 16px;
-}
 
-.accordion-button {
-    border-bottom: 1px solid $primary;
-}
 
 
 @include media-breakpoint-up(md) {
-    .service-hero {
-        position: relative;
-    }
+   
 
-    .service-description-section {
-        padding: 0 !important;
-    }
-
-    .service-hero-image {
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-    }
-
-    .service-hero-text {
-        width: 100%;
-        background-color: $bg-transparent;
-    }
-
-    .service-hero-button {
-        display: block;
-    }
     .service-reference-header {
         min-width: 300px;
     }
@@ -88,22 +25,15 @@
 }
 
 @include media-breakpoint-up(lg) {
-    .service-hero {
-        margin-top: 32px;
-        margin-bottom: 32px;
+    .accordion-button {
+        border-bottom: 1px solid $primary;
     }
-
-    .service-hero-text {
-        position: absolute;
-        bottom: 16px;
-        z-index: 2;
-        padding: 16px;
-        max-width: 700px;
+    
+    .mobile{
+        display: none;
     }
-
     .service-description-section {
         flex-direction: row;
-
     }
 
     .service-description-mobile-content {
@@ -118,14 +48,22 @@
         .service-description-content-header {
             padding: 16px;
             padding-left: 32px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
             border-bottom: 1px solid $primary;
             height: 72.02px;
         }
         .service-description-content-body{
             padding: 32px;
+            text-align: justify;
         }
 
         .service-reference-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
             padding: 16px;
             border-bottom: 1px solid $primary;
             height: 72.02px;
@@ -133,16 +71,5 @@
         .service-reference-header {
             min-width: 300px;
         }
-    }
-}
-
-@include media-breakpoint-up(xl) {
-    .service-hero {
-        margin-top: 64px;
-        margin-bottom: 64px;
-    }
-
-    .service-hero-text {
-        padding: 32px
     }
 }

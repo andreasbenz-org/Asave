@@ -1,0 +1,77 @@
+@import '../config';
+
+.hero-section {
+    padding-top: calc(62.5px + 16px) !important;
+    padding-bottom: 16px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .hero {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+
+        .hero-image {
+            width: 100;
+            flex: 1;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .hero-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+}
+
+@include media-breakpoint-up(md) {
+    .hero {
+        position: relative;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .hero-text {
+        width: 100%;
+        background-color: $bg-transparent;
+    }
+
+}
+
+@include media-breakpoint-up(lg) {
+    .hero {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    .hero-text {
+        position: absolute;
+        bottom: 16px;
+        z-index: 2;
+        padding: 16px;
+        max-width: 700px;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .hero {
+        margin-top: 64px;
+        margin-bottom: 64px;
+    }
+
+    .hero-text {
+        padding: 32px
+    }
+}

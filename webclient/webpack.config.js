@@ -40,7 +40,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|pdf)$/i,
         type: 'asset/resource',
       },
     ]
@@ -103,8 +103,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Asave Security Service | ISO-Zertifizierung',
-      filename: 'Zerzifizeirung.html',
-      template: 'src/templates/Zertifizierung.html'
+      filename: 'ISO-Zertifizierung.html',
+      template: 'src/templates/ISO-Zertifizierung.html'
     }),
     new HtmlWebpackPlugin({
       title: 'Asave Security Service | Unternehmenssponsoring',

@@ -1,0 +1,55 @@
+@import '../config';
+
+
+.ausbildung-description-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+
+}
+
+.ausbildung-description-content {
+    display: none;
+    background-color: $bg-transparent;
+    text-align: justify;
+}
+
+
+
+
+
+
+@include media-breakpoint-up(lg) {
+    .accordion-button {
+        border-bottom: 1px solid $primary;
+    }
+    
+    .ausbildung-description-section {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ausbildung-description-mobile-content {
+        display: none;
+    }
+
+    .ausbildung-description-content {
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+
+        .ausbildung-description-header {
+            padding: 16px;
+            padding-left: 32px;
+            border-bottom: 1px solid $primary;
+            height: 72.02px;
+        }
+
+        .ausbildung-description-content-body {
+            padding: 32px;
+        }
+
+    }
+}
