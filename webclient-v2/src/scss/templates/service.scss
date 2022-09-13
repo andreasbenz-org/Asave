@@ -1,0 +1,75 @@
+@import '../config';
+
+.service-description-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+}
+
+.service-description-content {
+    display: none;
+    background-color: $bg-transparent;
+}
+
+
+
+
+@include media-breakpoint-up(md) {
+   
+
+    .service-reference-header {
+        min-width: 300px;
+    }
+
+}
+
+@include media-breakpoint-up(lg) {
+    .accordion-button {
+        border-bottom: 1px solid $primary;
+    }
+    
+    .mobile{
+        display: none;
+    }
+    .service-description-section {
+        flex-direction: row;
+    }
+
+    .service-description-mobile-content {
+        display: none;
+    }
+
+    .service-description-content {
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+
+        .service-description-content-header {
+            padding: 16px;
+            padding-left: 32px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border-bottom: 1px solid $primary;
+            height: 72.02px;
+        }
+        .service-description-content-body{
+            padding: 32px;
+            text-align: justify;
+        }
+
+        .service-reference-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            border-bottom: 1px solid $primary;
+            height: 72.02px;
+        }
+        .service-reference-header {
+            min-width: 300px;
+        }
+    }
+}

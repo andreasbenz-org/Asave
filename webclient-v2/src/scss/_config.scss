@@ -1,0 +1,30 @@
+$enable-gradients: true;
+$enable-shadows: true;
+
+// Customize some defaults
+
+$body-color: rgb(255, 255, 255);
+$body-bg: #ffffff;
+$bg-light: #051136;
+$bg-transparent: rgba(0, 0, 0, 0.5);
+$dark: #051136;
+$success: #7952b3;
+$primary: #FFFF39;
+$danger: #ff4136;
+
+//accordion for services
+
+$accordion-bg: $bg-transparent;
+$accordion-border-radius: 0;
+$accordion-color: $primary;
+$accordion-button-active-bg: none;
+$accordion-button-focus-box-shadow: none;
+
+$border-radius: none;
+$btn-padding-y: 12px;
+$input-color: black;
+
+$offcanvas-bg-color: $dark;
+$btn-close-color: $primary;
+$btn-close-opacity: 1;
+$offcanvas-padding-x: 0

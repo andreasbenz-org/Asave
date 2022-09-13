@@ -1,0 +1,22 @@
+
+
+.contact-form {
+    background-color: rgba(4, 4, 4, 0.5);
+    padding: 16px;
+    .contact-form-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+}
+
+
+@include media-breakpoint-up(lg) {
+
+    .contact-form {
+        padding: 40px;
+
+    }
+}
+

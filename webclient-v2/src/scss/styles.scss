@@ -1,0 +1,242 @@
+@import 'config';
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "templates/service.scss";
+@import "templates/ausbildung.scss";
+@import 'templates/unternehmenssponsoring.scss';
+@import 'templates/iso-zertifizierung.scss';
+
+@import 'components/contact-form.scss';
+@import 'components/hero-section.scss';
+@import 'components/sidebar.scss';
+@import 'components/form.scss';
+
+body {
+  background-color: #051136;
+  background-image: url('../imgs/background.png');
+  background-position: center center;
+  background-position: top center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.navbar {
+  border-bottom: 1px solid $primary;
+}
+
+
+.navbar-spacing {
+  min-height: 62.5px;
+  width: 100%;
+}
+
+.bg-dark-transparent {
+  background-color: $bg-transparent;
+}
+
+.img-container {
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 350px;
+  max-height: 350px;
+  width: 100%;
+}
+
+.carousel-item-index {
+  height: 85vh;
+  padding: 1rem;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid $primary;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.service-container {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.service-content {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-decoration: none;
+}
+
+.service-description {
+  padding: 16px;
+  width: 100%;
+  background: $bg-transparent;
+  margin: 0;
+  text-align: start;
+  font-size: 22px;
+}
+
+.hero-logo {
+  background-image: url('../imgs/asave-logo-neu.png');
+}
+
+.hero-event {
+  background-image: url('../imgs/hero-event.png');
+}
+
+.bg-revierstreife {
+  background-image: url('../imgs/revierstreife-min.png');
+}
+
+.bg-objektschutz {
+  background-image: url('../imgs/objektschutz-min.png');
+}
+
+.bg-portierdienst {
+  background-image: url('../imgs/portierdienst-min.png');
+}
+
+.bg-veranstaltungsschutz {
+  background-image: url('../imgs/veranstaltungsschutz-min.png');
+}
+
+.bg-berufsdetektei {
+  background-image: url('../imgs/berufsdetektei-min.png');
+}
+
+.bg-personenschutz {
+  background-image: url('../imgs/personenschutz-min.png');
+}
+
+.bg-anfragen {
+  background-image: url('../imgs/anfragen-min.png');
+}
+
+.bg-bewerben {
+  background-image: url('../imgs/bewerben-min.png');
+}
+
+.bg-ausbildung {
+  background-image: url('../imgs/bewerben-min.png');
+}
+
+.bg-unternehmenssponsoring {
+  background-image: url('../imgs/Unternehmenssponsoring.png')
+}
+
+.bg-askoe {
+  background-image: url('../imgs/askoe.png');
+}
+
+.bg-sharks {
+  background-image: url('../imgs/sharks.png');
+}
+
+.bg-tauchclub {
+  background-image: url('../imgs/tauchclub.png');
+}
+
+.bg-tekaef {
+  background-image: url('../imgs/tekaef.png');
+}
+.bg-iso-zertifizierung {
+  background-image: url('../imgs/iso-zertifizierung.png');
+}
+
+.hero-xl-description {
+  display: none;
+}
+
+.footer {
+  background: white;
+  color: black;
+  padding: 16px;
+  padding-top: 80px;
+}
+
+@include media-breakpoint-up(lg) {
+  .bg-unternehmenssponsoring {
+    background-image: url('../imgs/Unternehmenssponsoring-desktop.png')
+  }
+  .bg-iso-zertifizierung {
+    background-size: fill !important;
+  }
+  .carousel-item-index {
+    background-color: rgba(4, 4, 4, 0.5);
+    justify-content: space-between;
+    padding: 40px;
+    height: 70vh;
+  }
+
+  .hero-description {
+    text-align: start;
+  }
+
+  .img-container {
+    flex: 1;
+    height: 60%;
+    max-height: 500px;
+  }
+
+  .hero-description {
+    flex: 1;
+  }
+
+  .hero-xl-description {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 20px;
+    border-bottom: 1px solid $primary;
+    display: block;
+    line-height: 2rem;
+    margin-bottom: 16px;
+  }
+
+}
+
+.footer-list {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    margin: 0;
+    color: black;
+  }
+}
+
+.footer-terms {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .term-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #designed-by {
+    color: $danger  !important;
+  }
+}
+
+.hero-button {
+  max-width: 600px;
+}
+
+.justify {
+  text-align: justify !important;
+}
+
+.max-w-600{
+  max-width: 800px;
+}
+
+.black{
+  color: black !important;
+}

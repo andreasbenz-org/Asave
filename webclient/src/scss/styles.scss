@@ -3,11 +3,12 @@
 @import "templates/service.scss";
 @import "templates/ausbildung.scss";
 @import 'templates/unternehmenssponsoring.scss';
+@import 'templates/iso-zertifizierung.scss';
+
 @import 'components/contact-form.scss';
 @import 'components/hero-section.scss';
-@import 'templates/iso-zertifizierung.scss';
 @import 'components/sidebar.scss';
-
+@import 'components/form.scss';
 
 body {
   background-color: #051136;
@@ -17,6 +18,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   box-sizing: border-box;
+  font-size: 18px;
 }
 
 .navbar {
@@ -42,7 +44,7 @@ body {
   width: 100%;
 }
 
-.carousel-item {
+.carousel-item-index {
   height: 85vh;
   padding: 1rem;
 }
@@ -165,7 +167,7 @@ body {
   .bg-iso-zertifizierung {
     background-size: fill !important;
   }
-  .carousel-item {
+  .carousel-item-index {
     background-color: rgba(4, 4, 4, 0.5);
     justify-content: space-between;
     padding: 40px;
