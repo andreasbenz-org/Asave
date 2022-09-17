@@ -1,4 +1,4 @@
-const { series, parallel, src, dest, watch } = require("gulp");
+const { series, src, dest, watch } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const postcss = require("gulp-postcss");
 const cssnano = require("cssnano");
@@ -6,7 +6,6 @@ const terser = require("gulp-terser");
 const browsersync = require("browser-sync").create();
 const autoprefixer = require("gulp-autoprefixer");
 const imagemin = require("gulp-imagemin");
-const inject = require("gulp-inject");
 const njk = require("gulp-nunjucks-render");
 
 function scssTask() {
@@ -21,10 +20,6 @@ function scssTask() {
     .pipe(dest("dist/css", { sourcemaps: "." }));
 }
 
-function htmlTask() {
-  return src("./src/*.html").pipe(dest("dist"));
-}
-
 function mergeHtml() {
   return src("src/html/pages/*.+(html|njk)")
     .pipe(
@@ -32,7 +27,6 @@ function mergeHtml() {
         path: ["src/html"],
       })
     )
-
     .pipe(dest("dist"));
 }
 

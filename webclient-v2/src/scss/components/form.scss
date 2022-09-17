@@ -31,17 +31,40 @@
             align-items: center;
         }
     }
-
 }
 
-.input-container {
+.form-footer,
+.form-title {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.form-title {
+    border-bottom: 1px solid $primary;
+}
+
+.form-body {
+    width: 100%;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: 100%;
+
 }
 
-.form-button{
+.form-element-right,
+.form-element {
+    width: 100%;
+    max-width: 360px;
+    margin-bottom: 16px;
+}
+
+
+.form-button {
     width: 100%;
     max-width: 320px;
     margin-bottom: 32px;
@@ -49,11 +72,14 @@
 
 @include media-breakpoint-up(lg) {
 
-    .input-container {
+    .form-body {
         flex-direction: row;
         justify-content: center;
-        gap: 32px;
+        padding: 64px;
+        gap: 64px;
     }
 
-
+    .form-element-right {
+        float: right;
+    }
 }

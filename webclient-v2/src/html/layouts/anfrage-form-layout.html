@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <title>ASAVE | {{ page_name }}</title>
+    <meta name="keywords" content="{{ SEO_keywords }}" />
+    <meta name="description" content="{{ SEO_description }}" />
+    <meta name="og:title" content="My site {{ page_name }}" />
+    <meta name="og:description" content="{{ SEO_description }}" />
+  </head>
+  <body>
+    {% include "partials/header.html" %}
+    <section class="container iso-hero-section">
+      <div class="formular-hero bg-dark-transparent">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-touch="false">
+          {% block content %}{% endblock %}
+          <form action="requestform.php" method="post">
+            <div class="carousel-inner">
+              <section class="carousel-item active">
+                {% include "partials/anfrage-form-a.html" %}
+              </section>
+
+              <section class="carousel-item">
+                <div class="input-group d-block w-100">
+                  {% include "partials/anfrage-form-b.html" %}
+                </div>
+              </section>
+
+              <section class="carousel-item">
+                <div class="input-group d-block w-100">
+                  {% include "partials/anfrage-form-c.html" %}
+                </div>
+              </section>
+
+              <section class="carousel-item">
+                <div class="input-group d-block w-100">
+                  {% include "partials/anfrage-form-d.html" %}
+                </div>
+              </section>
+
+              <section class="carousel-item">
+                <div class="input-group d-block w-100">
+                  {% include "partials/anfrage-form-e.html" %}
+                </div>
+              </section>
+
+              <section class="carousel-item">
+                <div class="input-group d-block w-100">
+                  {% include "partials/anfrage-form-f.html" %}
+                </div>
+              </section>
+
+              <section class="carousel-item">
+                <div class="input-group d-block w-100">
+                  {% include "partials/anfrage-form-g.html" %}
+                </div>
+              </section>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="divider"></div>
+    </div>
+    {% include "partials/contactus.html" %}
+    <div class="container">
+      <div class="divider"></div>
+    </div>
+    {% include "partials/footer.html" %} {% block scripts %}{% endblock %}
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
