@@ -1,0 +1,190 @@
+{% set page_name = 'Startseite' %} {% set SEO_description = 'SSG using
+Nunjucks and Gulp' %} {% set SEO_keywords = 'SSG, Nunjucks, Gulp, JavaScript' %}
+{% extends "layouts/layout.html" %} {% block content %}
+<div class="navbar-spacing"></div>
+
+<div class="container text-center hero-section">
+  <div
+    id="carouselExampleIndicators"
+    class="carousel slide"
+    data-bs-ride="true"
+  >
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+    </div>
+
+    <div class="carousel-inner pt-lg-4">
+      <div class="carousel-item carousel-item-index active text-center">
+        <div
+          class="d-flex flex-column flex-lg-row-reverse justify-content-center align-items-lg-center h-100"
+        >
+          <div class="hero-logo img-container"></div>
+          <div class="hero-description d-block text-uppercase h1">
+            <span class="d-block">sicherheit</span>
+            <span>durch<span class="text-primary">&nbsp;qualität</span></span>
+            <div class="hero-xl-description">
+              <span class="text-primary"
+                >Asave Security Service<span class="text-white"
+                  >&nbsp;- Ihr ISO-zertifiziertes</span
+                ></span
+              >
+              <span>Sicherheitsunternehmen aus Linz.</span>
+            </div>
+            <a
+              href="Anfragen.html"
+              class="hero-button btn btn-primary w-100 text-uppercase my-4 px-4n"
+              >jetzt anfragen</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item carousel-item-index text-center">
+        <div
+          class="d-flex flex-1 flex-column flex-lg-row-reverse justify-content-center align-items-lg-center h-100"
+        >
+          <div class="hero-event img-container"></div>
+          <div class="hero-description d-block text-uppercase h1">
+            <span class="d-block">feiern sie uns</span>
+            <span>uns<span class="text-primary">&nbsp;jubiläum</span></span>
+            <div class="hero-xl-description">
+              <span class="text-primary"
+                >Asave Security Service<span class="text-white"
+                  >&nbsp;- 20 Jahre Erfahrung</span
+                ></span
+              >
+              <span>mit Sicherheit durch Qualität</span>
+            </div>
+            <a
+              class="hero-button btn btn-primary w-100 text-uppercase my-4 px-4"
+              >mehr erfahren</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleIndicators"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleIndicators"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  <i class="fa-solid fa-chevron-down text-primary mt-lg-4"></i>
+</div>
+
+<div class="container">
+  <div class="row g-4 align-items-center my-2">
+    <a href="Revierstreife.html" class="col-sm-12 col-lg-4 service-container">
+      <div class="service-content bg-revierstreife">
+        <div class="service-description text-uppercase">
+          <span class="text-white"
+            >revier<span class="text-primary">streife</span></span
+          >
+        </div>
+      </div>
+    </a>
+    <a href="Objektschutz.html" class="col-sm-12 col-lg-4 service-container">
+      <div class="service-content bg-objektschutz">
+        <div class="service-description text-uppercase">
+          <span class="text-white"
+            >objekt<span class="text-primary">schutz</span></span
+          >
+        </div>
+      </div>
+    </a>
+    <a href="Portierdienst.html" class="col-sm-12 col-lg-4 service-container">
+      <div class="service-content bg-portierdienst">
+        <div class="service-description text-uppercase">
+          <span class="text-white"
+            >portier<span class="text-primary">dienst</span></span
+          >
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="row g-4 align-items-center my-2">
+    <a
+      href="Veranstaltungsschutz.html"
+      class="col-sm-12 col-lg-4 service-container"
+    >
+      <div class="service-content bg-veranstaltungsschutz">
+        <div class="service-description text-uppercase">
+          <span class="text-white"
+            >veranstaltungs<span class="text-primary">schutz</span></span
+          >
+        </div>
+      </div>
+    </a>
+    <a href="Berufsdetektei.html" class="col-sm-12 col-lg-4 service-container">
+      <div class="service-content bg-berufsdetektei">
+        <div class="service-description text-uppercase">
+          <span class="text-white"
+            >berufs<span class="text-primary">detektei</span></span
+          >
+        </div>
+      </div>
+    </a>
+    <a href="Personenschutz.html" class="col-sm-12 col-lg-4 service-container">
+      <div class="service-content bg-personenschutz">
+        <div class="service-description text-uppercase">
+          <span class="text-white"
+            >personen<span class="text-primary">schutz</span></span
+          >
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="container">
+  <div class="divider"></div>
+</div>
+<div class="container">
+  <div class="row g-4 align-items-center">
+    <a href="Anfragen.html" class="col-sm-12 col-lg-6 service-container">
+      <div class="service-content bg-anfragen">
+        <div class="service-description text-uppercase">
+          <span class="text-white"
+            >jetzt<span class="text-primary">anfragen</span></span
+          >
+        </div>
+      </div>
+    </a>
+    <a href="Bewerbung.html" class="col-sm-12 col-lg-6 service-container">
+      <div class="service-content bg-bewerben">
+        <div class="service-description text-uppercase">
+          <span class="text-white"
+            >jetzt<span class="text-primary">bewerben</span></span
+          >
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+{% endblock %}

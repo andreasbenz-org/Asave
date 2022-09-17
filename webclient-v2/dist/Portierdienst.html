@@ -1,435 +1,632 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                    <!-- inject:css -->
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- endinject -->
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <nav class="navbar bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="index.html"><img id="navbar-logo" src="./assets/imgs/app-logo.png" alt="app-logo" /></a>
-          <button class="navbar-button" type="button" data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-              <svg width="33" height="23" viewBox="0 0 33 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                      d="M0.285645 1.04545C0.285645 0.467841 0.797359 0 1.4285 0H31.1428C31.7714 0 32.2856 0.467841 32.2856 1.04545C32.2856 1.62307 31.7714 2.09091 31.1428 2.09091H1.4285C0.797359 2.09091 0.285645 1.62307 0.285645 1.04545ZM0.285645 11.5C0.285645 10.925 0.797359 10.4545 1.4285 10.4545H31.1428C31.7714 10.4545 32.2856 10.925 32.2856 11.5C32.2856 12.075 31.7714 12.5455 31.1428 12.5455H1.4285C0.797359 12.5455 0.285645 12.075 0.285645 11.5ZM31.1428 23H1.4285C0.797359 23 0.285645 22.5295 0.285645 21.9545C0.285645 21.3795 0.797359 20.9091 1.4285 20.9091H31.1428C31.7714 20.9091 32.2856 21.3795 32.2856 21.9545C32.2856 22.5295 31.7714 23 31.1428 23Z"
-                      fill="#FFFF39" />
-              </svg>
-          </button>
-
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/styles.css" />
+  
+  <title>ASAVE | Portierdienst</title>
+  <meta name="keywords" content="SSG, Nunjucks, Gulp, JavaScript">
+  <meta name="description" content="SSG using
+Nunjucks and Gulp">
+  <meta name="og:title" content="My site Portierdienst">
+  <meta name="og:description" content="SSG using
+Nunjucks and Gulp">
+</head>
+<body>
+  <nav class="navbar bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img id="navbar-logo" src="./imgs/app-logo.png" alt="app-logo" /></a>
+      <button
+        class="navbar-button"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasWithBothOptions"
+        aria-controls="offcanvasWithBothOptions"
+      >
+        <svg
+          width="33"
+          height="23"
+          viewBox="0 0 33 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.285645 1.04545C0.285645 0.467841 0.797359 0 1.4285 0H31.1428C31.7714 0 32.2856 0.467841 32.2856 1.04545C32.2856 1.62307 31.7714 2.09091 31.1428 2.09091H1.4285C0.797359 2.09091 0.285645 1.62307 0.285645 1.04545ZM0.285645 11.5C0.285645 10.925 0.797359 10.4545 1.4285 10.4545H31.1428C31.7714 10.4545 32.2856 10.925 32.2856 11.5C32.2856 12.075 31.7714 12.5455 31.1428 12.5455H1.4285C0.797359 12.5455 0.285645 12.075 0.285645 11.5ZM31.1428 23H1.4285C0.797359 23 0.285645 22.5295 0.285645 21.9545C0.285645 21.3795 0.797359 20.9091 1.4285 20.9091H31.1428C31.7714 20.9091 32.2856 21.3795 32.2856 21.9545C32.2856 22.5295 31.7714 23 31.1428 23Z"
+            fill="#FFFF39"
+          />
+        </svg>
+      </button>
+    </div>
   </nav>
-
-  <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-      aria-labelledby="offcanvasWithBothOptionsLabel">
-      <div class="offcanvas-header">
-          <div class="sidebar-header">
-              <h5 class="text-uppercase text-primary offcanvas-title" id="offcanvasWithBothOptionsLabel">Menü</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-      </div>
-      <div class="offcanvas-body">
-          <ul class="sidebar-list">
-            <li><a href="index.html">Startseite</a></li>
-              <li><button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
-                      data-bs-target="#offcanvasUnternehmen" aria-controls="offcanvasUnternehmen">Unternehmen<svg
-                          width="18" height="36" viewBox="0 0 18 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                              d="M3.66316 7.50236C3.24993 7.03872 3.28621 6.32884 3.74669 5.91189C4.20808 5.49662 4.9202 5.53396 5.33505 5.99542L15.4616 17.2477C15.8461 17.6783 15.8461 18.3242 15.4616 18.7552L5.33659 29.9419C4.92133 30.4033 4.20949 30.4407 3.74823 30.0254C3.26181 29.5845 3.2713 28.873 3.6647 28.435L13.111 18L3.66316 7.50236Z"
-                              fill="#FFFF39" />
-                      </svg>
-                  </button></li>
-              <li><button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
-                      data-bs-target="#offcanvasLeistungen" aria-controls="offcanvasLeistungen">Leistungen<svg
-                          width="18" height="36" viewBox="0 0 18 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                              d="M3.66316 7.50236C3.24993 7.03872 3.28621 6.32884 3.74669 5.91189C4.20808 5.49662 4.9202 5.53396 5.33505 5.99542L15.4616 17.2477C15.8461 17.6783 15.8461 18.3242 15.4616 18.7552L5.33659 29.9419C4.92133 30.4033 4.20949 30.4407 3.74823 30.0254C3.26181 29.5845 3.2713 28.873 3.6647 28.435L13.111 18L3.66316 7.50236Z"
-                              fill="#FFFF39" />
-                      </svg>
-                  </button></li>
-              <li><button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
-                      data-bs-target="#offcanvasPersonal" aria-controls="offcanvasPersonal">Personal<svg width="18"
-                          height="36" viewBox="0 0 18 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                              d="M3.66316 7.50236C3.24993 7.03872 3.28621 6.32884 3.74669 5.91189C4.20808 5.49662 4.9202 5.53396 5.33505 5.99542L15.4616 17.2477C15.8461 17.6783 15.8461 18.3242 15.4616 18.7552L5.33659 29.9419C4.92133 30.4033 4.20949 30.4407 3.74823 30.0254C3.26181 29.5845 3.2713 28.873 3.6647 28.435L13.111 18L3.66316 7.50236Z"
-                              fill="#FFFF39" />
-                      </svg>
-                  </button></li>
-              <li><button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
-                      data-bs-target="#offcanvasReferenzen" aria-controls="offcanvasReferenzen">Referenzen<svg
-                          width="18" height="36" viewBox="0 0 18 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                              d="M3.66316 7.50236C3.24993 7.03872 3.28621 6.32884 3.74669 5.91189C4.20808 5.49662 4.9202 5.53396 5.33505 5.99542L15.4616 17.2477C15.8461 17.6783 15.8461 18.3242 15.4616 18.7552L5.33659 29.9419C4.92133 30.4033 4.20949 30.4407 3.74823 30.0254C3.26181 29.5845 3.2713 28.873 3.6647 28.435L13.111 18L3.66316 7.50236Z"
-                              fill="#FFFF39" />
-                      </svg>
-                  </button></li>
-              <li><button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
-                      data-bs-target="#offcanvasGalerie" aria-controls="offcanvasGalerie">Galerie<svg width="18"
-                          height="36" viewBox="0 0 18 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                              d="M3.66316 7.50236C3.24993 7.03872 3.28621 6.32884 3.74669 5.91189C4.20808 5.49662 4.9202 5.53396 5.33505 5.99542L15.4616 17.2477C15.8461 17.6783 15.8461 18.3242 15.4616 18.7552L5.33659 29.9419C4.92133 30.4033 4.20949 30.4407 3.74823 30.0254C3.26181 29.5845 3.2713 28.873 3.6647 28.435L13.111 18L3.66316 7.50236Z"
-                              fill="#FFFF39" />
-                      </svg>
-                  </button></li>
-          </ul>
-      </div>
+  <div
+  class="offcanvas offcanvas-end"
+  data-bs-scroll="true"
+  tabindex="-1"
+  id="offcanvasWithBothOptions"
+  aria-labelledby="offcanvasWithBothOptionsLabel"
+>
+  <div class="offcanvas-header">
+    <div class="sidebar-header">
+      <h5
+        class="text-uppercase text-primary offcanvas-title"
+        id="offcanvasWithBothOptionsLabel"
+      >
+        Menü
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
   </div>
-
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasUnternehmen" aria-labelledby="offcanvasRightLabel">
-      <div class="offcanvas-header">
-          <div class="sidebar-header">
-              <h5 class="text-uppercase text-primary offcanvas-title" id="offcanvasWithBothOptionsLabel">Unternehmen
-              </h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-      </div>
-      <div class="offcanvas-body">
-          <ul class="sidebar-list">
-              <li><a href="ISO-Zertifizierung.html">ISO-Zertifizierung</a></li>
-              <li><a href="Unternehmenssponsoring.html">Unternehmenssponsoring</a></li>
-              <li><a href="Partner.html">Partner</a></li>
-          </ul>
-      </div>
-  </div>
-
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasLeistungen" aria-labelledby="offcanvasRightLabel">
-      <div class="offcanvas-header">
-          <div class="sidebar-header">
-              <h5 class="text-uppercase text-primary offcanvas-title" id="offcanvasWithBothOptionsLabel">Leistungen
-              </h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-      </div>
-      <div class="offcanvas-body">
-          <ul class="sidebar-list">
-              <li><a href="Revierstreife.html">Revierstreife</a></li>
-              <li><a href="Objektschutz.html">Objektschutz</a></li>
-              <li><a href="Portierdienst.html">Portierdienst</a></li>
-              <li><a href="Veranstaltungsschutz.html">Veranstaltungsschutz</a></li>
-              <li><a href="Berufsdetektei.html">Berufsdetektei</a></li>
-              <li><a href="Personenschutz.html">Personenschutz</a></li>
-          </ul>
-      </div>
-  </div>
-
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasPersonal" aria-labelledby="offcanvasRightLabel">
-      <div class="offcanvas-header">
-          <div class="sidebar-header">
-              <h5 class="text-uppercase text-primary offcanvas-title" id="offcanvasWithBothOptionsLabel">Personal</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-      </div>
-      <div class="offcanvas-body">
-          <ul class="sidebar-list">
-              <li><a href="Ausbildung.html">Ausbildung</a></li>
-              <li><a href="Bewerbung.html">Jetzt bewerben</a></li>
-          </ul>
-      </div>
-  </div>
-
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasReferenzen" aria-labelledby="offcanvasRightLabel">
-      <div class="offcanvas-header">
-          <div class="sidebar-header">
-              <h5 class="text-uppercase text-primary offcanvas-title" id="offcanvasWithBothOptionsLabel">Referenzen
-              </h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-      </div>
-      <div class="offcanvas-body">
-          <ul class="sidebar-list">
-              <li><a href="Referenzen.html/?category=1">Kundinnen & Kunden</a></li>
-              <li><a href="Referenzen.html/?category=2">Locations</a></li>
-              <li><a href="Referenzen.html/?category=3">Konzerte & Festivals</a></li>
-              <li><a href="Referenzen.html/?category=4">Veranstaltungs- bzw. Objektschutz</a></li>
-              <li><a href="Referenzen.html/?category=5">Messen</a></li>
-              <li><a href="Referenzen.html/?category=6">Gastronomie</a></li>
-              <li><a href="Referenzen.html/?category=7">Revierstreife & Objektbetreuung</a></li>
-              <li><a href="Referenzen.html/?category=8">Baustellenbewachung & Verkehrsregelung</a></li>
-              <li><a href="Referenzen.html/?category=9">Personenschutz</a></li>
-              <li><a href="Referenzen.html/?category=10">Kaufhausdetektei</a></li>
-          </ul>
-      </div>
-  </div>
-
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasGalerie" aria-labelledby="offcanvasRightLabel">
-      <div class="offcanvas-header">
-          <div class="sidebar-header">
-              <h5 class="text-uppercase text-primary offcanvas-title" id="offcanvasWithBothOptionsLabel">Galerie</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-      </div>
-      <div class="offcanvas-body">
-          <ul class="sidebar-list">
-              <li><a href="Galerie.html/?category=1.html">Im Dienst</a></li>
-              <li><a href="Galerie.html/?category=2.html">Autogramme</a></li>
-              <li><a href="Galerie.html/?category=3.html">Presse</a></li>
-          </ul>
-      </div>
-  </div>
-
-    <section class="container hero-section">
-      <div class="hero bg-dark-transparent">
-        <div class="hero-image bg-portierdienst"></div>
-        <div class="hero-text">
-          <div class="my-3">
-            <span class="h1 text-white text-uppercase"
-              >portier<span class="h1 text-primary text-uppercase"
-                >dienst</span
-              ></span
-            >
-          </div>
-          <span class="justify">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet.
-          </span>
-          <a href="Anfragen.html" class="btn btn-primary w-100 text-uppercase my-4 px-4n"
-            >jetzt anfragen</a
+  <div class="offcanvas-body">
+    <ul class="sidebar-list">
+      <li><a href="index.html">Startseite</a></li>
+      <li>
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasUnternehmen"
+          aria-controls="offcanvasUnternehmen"
+        >
+          Unternehmen<svg
+            width="18"
+            height="36"
+            viewBox="0 0 18 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
+            <path
+              d="M3.66316 7.50236C3.24993 7.03872 3.28621 6.32884 3.74669 5.91189C4.20808 5.49662 4.9202 5.53396 5.33505 5.99542L15.4616 17.2477C15.8461 17.6783 15.8461 18.3242 15.4616 18.7552L5.33659 29.9419C4.92133 30.4033 4.20949 30.4407 3.74823 30.0254C3.26181 29.5845 3.2713 28.873 3.6647 28.435L13.111 18L3.66316 7.50236Z"
+              fill="#FFFF39"
+            />
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasLeistungen"
+          aria-controls="offcanvasLeistungen"
+        >
+          Leistungen<svg
+            width="18"
+            height="36"
+            viewBox="0 0 18 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.66316 7.50236C3.24993 7.03872 3.28621 6.32884 3.74669 5.91189C4.20808 5.49662 4.9202 5.53396 5.33505 5.99542L15.4616 17.2477C15.8461 17.6783 15.8461 18.3242 15.4616 18.7552L5.33659 29.9419C4.92133 30.4033 4.20949 30.4407 3.74823 30.0254C3.26181 29.5845 3.2713 28.873 3.6647 28.435L13.111 18L3.66316 7.50236Z"
+              fill="#FFFF39"
+            />
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasPersonal"
+          aria-controls="offcanvasPersonal"
+        >
+          Personal<svg
+            width="18"
+            height="36"
+            viewBox="0 0 18 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.66316 7.50236C3.24993 7.03872 3.28621 6.32884 3.74669 5.91189C4.20808 5.49662 4.9202 5.53396 5.33505 5.99542L15.4616 17.2477C15.8461 17.6783 15.8461 18.3242 15.4616 18.7552L5.33659 29.9419C4.92133 30.4033 4.20949 30.4407 3.74823 30.0254C3.26181 29.5845 3.2713 28.873 3.6647 28.435L13.111 18L3.66316 7.50236Z"
+              fill="#FFFF39"
+            />
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasReferenzen"
+          aria-controls="offcanvasReferenzen"
+        >
+          Referenzen<svg
+            width="18"
+            height="36"
+            viewBox="0 0 18 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.66316 7.50236C3.24993 7.03872 3.28621 6.32884 3.74669 5.91189C4.20808 5.49662 4.9202 5.53396 5.33505 5.99542L15.4616 17.2477C15.8461 17.6783 15.8461 18.3242 15.4616 18.7552L5.33659 29.9419C4.92133 30.4033 4.20949 30.4407 3.74823 30.0254C3.26181 29.5845 3.2713 28.873 3.6647 28.435L13.111 18L3.66316 7.50236Z"
+              fill="#FFFF39"
+            />
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasGalerie"
+          aria-controls="offcanvasGalerie"
+        >
+          Galerie<svg
+            width="18"
+            height="36"
+            viewBox="0 0 18 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.66316 7.50236C3.24993 7.03872 3.28621 6.32884 3.74669 5.91189C4.20808 5.49662 4.9202 5.53396 5.33505 5.99542L15.4616 17.2477C15.8461 17.6783 15.8461 18.3242 15.4616 18.7552L5.33659 29.9419C4.92133 30.4033 4.20949 30.4407 3.74823 30.0254C3.26181 29.5845 3.2713 28.873 3.6647 28.435L13.111 18L3.66316 7.50236Z"
+              fill="#FFFF39"
+            />
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasUnternehmen"
+  aria-labelledby="offcanvasRightLabel"
+>
+  <div class="offcanvas-header">
+    <div class="sidebar-header">
+      <h5
+        class="text-uppercase text-primary offcanvas-title"
+        id="offcanvasWithBothOptionsLabel"
+      >
+        Unternehmen
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="sidebar-list">
+      <li><a href="Zertifizierung.html">ISO-Zertifizierung</a></li>
+      <li>
+        <a href="Unternehmenssponsoring.html">Unternehmenssponsoring</a>
+      </li>
+      <li><a href="Partner.html">Partner</a></li>
+    </ul>
+  </div>
+</div>
+
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasLeistungen"
+  aria-labelledby="offcanvasRightLabel"
+>
+  <div class="offcanvas-header">
+    <div class="sidebar-header">
+      <h5
+        class="text-uppercase text-primary offcanvas-title"
+        id="offcanvasWithBothOptionsLabel"
+      >
+        Leistungen
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="sidebar-list">
+      <li><a href="Revierstreife.html">Revierstreife</a></li>
+      <li><a href="Objektschutz.html">Objektschutz</a></li>
+      <li><a href="Portierdienst.html">Portierdienst</a></li>
+      <li><a href="Veranstaltungsschutz.html">Veranstaltungsschutz</a></li>
+      <li><a href="Berufsdetektei.html">Berufsdetektei</a></li>
+      <li><a href="Personenschutz.html">Personenschutz</a></li>
+    </ul>
+  </div>
+</div>
+
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasPersonal"
+  aria-labelledby="offcanvasRightLabel"
+>
+  <div class="offcanvas-header">
+    <div class="sidebar-header">
+      <h5
+        class="text-uppercase text-primary offcanvas-title"
+        id="offcanvasWithBothOptionsLabel"
+      >
+        Personal
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="sidebar-list">
+      <li><a href="Ausbildung.html">Ausbildung</a></li>
+      <li><a href="Bewerbung.html">Jetzt bewerben</a></li>
+    </ul>
+  </div>
+</div>
+
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasReferenzen"
+  aria-labelledby="offcanvasRightLabel"
+>
+  <div class="offcanvas-header">
+    <div class="sidebar-header">
+      <h5
+        class="text-uppercase text-primary offcanvas-title"
+        id="offcanvasWithBothOptionsLabel"
+      >
+        Referenzen
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="sidebar-list">
+      <li><a href="Referenzen.html/?category=1">Kundinnen & Kunden</a></li>
+      <li><a href="Referenzen.html/?category=2">Locations</a></li>
+      <li>
+        <a href="Referenzen.html/?category=3">Konzerte & Festivals</a>
+      </li>
+      <li>
+        <a href="Referenzen.html/?category=4"
+          >Veranstaltungs- bzw. Objektschutz</a
+        >
+      </li>
+      <li><a href="Referenzen.html/?category=5">Messen</a></li>
+      <li><a href="Referenzen.html/?category=6">Gastronomie</a></li>
+      <li>
+        <a href="Referenzen.html/?category=7"
+          >Revierstreife & Objektbetreuung</a
+        >
+      </li>
+      <li>
+        <a href="Referenzen.html/?category=8"
+          >Baustellenbewachung & Verkehrsregelung</a
+        >
+      </li>
+      <li><a href="Referenzen.html/?category=9">Personenschutz</a></li>
+      <li><a href="Referenzen.html/?category=10">Kaufhausdetektei</a></li>
+    </ul>
+  </div>
+</div>
+
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasGalerie"
+  aria-labelledby="offcanvasRightLabel"
+>
+  <div class="offcanvas-header">
+    <div class="sidebar-header">
+      <h5
+        class="text-uppercase text-primary offcanvas-title"
+        id="offcanvasWithBothOptionsLabel"
+      >
+        Galerie
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="sidebar-list">
+      <li><a href="Galerie.html/?category=1.html">Im Dienst</a></li>
+      <li><a href="Galerie.html/?category=2.html">Autogramme</a></li>
+      <li><a href="Galerie.html/?category=3.html">Presse</a></li>
+    </ul>
+  </div>
+</div>
+  
+    
+<section class="container hero-section">
+  <div class="hero bg-dark-transparent">
+    <div class="hero-image bg-portierdienst"></div>
+    <div class="hero-text">
+      <div class="my-3">
+        <span class="h2 text-white text-uppercase"
+          >portier<span class="h2 text-primary text-uppercase"
+            >dienst</span
+          ></span
+        >
+      </div>
+      <span class="justify">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+        amet.
+      </span>
+      <a
+        href="Anfragen.html"
+        class="btn btn-primary w-100 text-uppercase my-4 px-4n"
+        >jetzt anfragen</a
+      >
+    </div>
+  </div>
+</section>
+
+<section class="service-description-section container">
+  <div
+    class="service-description-mobile-content accordion accordion-flush"
+    id="accordionFlushOne"
+  >
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseOne"
+          aria-expanded="false"
+          aria-controls="flush-collapseOne"
+        >
+          <span class="m-0 h4 text-uppercase text-white">Aufgabenbereiche</span>
+        </button>
+      </h2>
+      <div
+        id="flush-collapseOne"
+        class="accordion-collapse collapse"
+        aria-labelledby="flush-headingOne"
+        data-bs-parent="#accordionFlushOne"
+      >
+        <div class="accordion-body">
+          <div class="service-description-content-body justify">
+            <span class="h4"
+              >Permanenter oder zeitlich begrenzter Portierdienst:</span
+            >
+            <ul>
+              <li>Telefonvermittlung.</li>
+              <li>Auskunfterteilung.</li>
+              <li>Erstellen von Passierscheinen.</li>
+              <li>Kontrolle von COVID-19 Impfnachweisen.</li>
+            </ul>
+            <span class="h5 justify">
+              Portierdienst fällt laut §129 Abs. 5 Z 4 ebenfalls in den
+              Tätigkeitsbereich des Bewachungsgewerbes: „zu den im Abs. 4
+              genannten Tätigkeiten gehören insbesondere auch folgende
+              Tätigkeiten:[…]4. Portierdienste;“
+            </span>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <section class="service-description-section container">
+  <div
+    class="service-description-mobile-content accordion accordion-flush"
+    id="accordionFlushTwo"
+  >
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingSecond">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseSecond"
+          aria-expanded="false"
+          aria-controls="flush-collapseSecond"
+        >
+          <span class="m-0 h4 text-uppercase text-white">Referenzen</span>
+        </button>
+      </h2>
       <div
-        class="service-description-mobile-content accordion accordion-flush"
-        id="accordionFlushOne"
+        id="flush-collapseSecond"
+        class="accordion-collapse collapse"
+        aria-labelledby="flush-headingSecond"
+        data-bs-parent="#accordionFlushTwo"
       >
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseOne"
-              aria-expanded="false"
-              aria-controls="flush-collapseOne"
+        <div class="accordion-body justify">
+          Placeholder content for this accordion, which is intended to
+          demonstrate the <code>.accordion-flush</code> class. This is the third
+          item's accordion body. Nothing more exciting happening here in terms
+          of content, but just filling up the space to make it look, at least at
+          first glance, a bit more representative of how this would look in a
+          real-world application.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="service-description-content w-100">
+    <div class="service-description-content-header">
+      <span class="m-0 h4 text-uppercase">Aufgabenbereiche</span>
+    </div>
+    <div class="service-description-content-body justify">
+      <span class="h4"
+        >Permanenter oder zeitlich begrenzter Portierdienst:</span
+      >
+      <ul>
+        <li>Telefonvermittlung.</li>
+        <li>Auskunfterteilung.</li>
+        <li>Erstellen von Passierscheinen.</li>
+        <li>Kontrolle von COVID-19 Impfnachweisen.</li>
+      </ul>
+      <span class="h5 justify">
+        Portierdienst fällt laut §129 Abs. 5 Z 4 ebenfalls in den
+        Tätigkeitsbereich des Bewachungsgewerbes: „zu den im Abs. 4 genannten
+        Tätigkeiten gehören insbesondere auch folgende Tätigkeiten:[…]4.
+        Portierdienste;“
+      </span>
+    </div>
+  </div>
+
+  <div class="service-description-content flex-shrink-1">
+    <div class="service-reference-header text-center">
+      <span class="m-0 h4 text-uppercase text">Referenzen</span>
+    </div>
+    <div class="service-reference-body"></div>
+  </div>
+</section>
+
+
+  <div class="container">
+    <div class="divider"></div>
+  </div>
+  <section class="container contact-section">
+    <div class="contact-form">
+      <div class="row">
+        <div
+          class="col-md-12 col-lg-6 text-uppercase h2 my-4 contact-form-title"
+        >
+          <span>noch fragen?</span>
+          <span class="text-primary">kontaktieren <span>sie uns</span></span>
+        </div>
+        <form
+          class="col-md-12 col-lg-6"
+          method="POST"
+          action="contactform.php"
+        >
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Titel:</label
             >
-              <span class="m-0 h4 text-uppercase text-white">Aufgabenbereiche</span>
-            </button>
-          </h2>
-          <div
-            id="flush-collapseOne"
-            class="accordion-collapse collapse"
-            aria-labelledby="flush-headingOne"
-            data-bs-parent="#accordionFlushOne"
+            <input
+              name="title"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Titel"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Vor und Nachname</label
+            >
+            <input
+              name="name"
+              class="form-control"
+              id="name"
+              placeholder="Vor und Nachname"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Email:</label
+            >
+            <input
+              name="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >Ihre Nachricht an uns:</label
+            >
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary my-3 text-uppercase w-100"
           >
-            <div class="accordion-body">
-              <div class="service-description-content-body justify">
-                <span class="h4"
-                  >Permanenter oder zeitlich begrenzter Portierdienst:</span
+            formular absenden
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <div class="divider"></div>
+  </div>
+  <footer>
+    <footer class="footer w-100">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-lg-6">
+              <span class="h6">ASAVE Security Service, Ylva Haberlik e.U.</span>
+              <address>
+                <span>Hauptstrasse 83 - 85</span>
+                <br />
+                <span>A - 4040 Linz</span>
+                <br />
+                <span>+43 732 / 91 81 51</span>
+                <br />
+                <a class="text-black" href="mailto:office@asave.net"
+                  >office@asave.at</a
                 >
-                <ul>
-                  <li>Telefonvermittlung.</li>
-                  <li>Auskunfterteilung.</li>
-                  <li>Erstellen von Passierscheinen.</li>
-                  <li>Kontrolle von COVID-19 Impfnachweisen.</li>
+                <br />
+              </address>
+            </div>
+            <div class="col-md-12 col-lg-6 footer-terms">
+              <div class="terms-links">
+                <span class="h6">Rechtliches</span>
+                <ul class="footer-list">
+                  <li>
+                    <a class="text-black" href="datenschutz.html">Datenschutz</a>
+                  </li>
+                  <li>
+                    <a class="text-black" href="impressum.html">Impressum</a>
+                  </li>
+                  <li><a class="text-black" href="agb.html">AGB</a></li>
                 </ul>
-                <span class="h5 justify">
-                  Portierdienst fällt laut §129 Abs. 5 Z 4 ebenfalls in den
-                  Tätigkeitsbereich des Bewachungsgewerbes: „zu den im Abs. 4
-                  genannten Tätigkeiten gehören insbesondere auch folgende
-                  Tätigkeiten:[…]4. Portierdienste;“
-                </span>
               </div>
+              <img id="footer-certificate" src="./imgs/certificate.png" alt="" />
             </div>
           </div>
-        </div>
-      </div>
-
-      <div
-        class="service-description-mobile-content accordion accordion-flush"
-        id="accordionFlushTwo"
-      >
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingSecond">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseSecond"
-              aria-expanded="false"
-              aria-controls="flush-collapseSecond"
-            >
-              <span class="m-0 h4 text-uppercase text-white">Referenzen</span>
-            </button>
-          </h2>
-          <div
-            id="flush-collapseSecond"
-            class="accordion-collapse collapse"
-            aria-labelledby="flush-headingSecond"
-            data-bs-parent="#accordionFlushTwo"
-          >
-            <div class="accordion-body justify">
-              Placeholder content for this accordion, which is intended to
-              demonstrate the <code>.accordion-flush</code> class. This is the
-              third item's accordion body. Nothing more exciting happening here
-              in terms of content, but just filling up the space to make it
-              look, at least at first glance, a bit more representative of how
-              this would look in a real-world application.
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="service-description-content w-100">
-        <div class="service-description-content-header">
-          <span class="m-0 h4 text-uppercase">Aufgabenbereiche</span>
-        </div>
-        <div class="service-description-content-body justify">
-          <span class="h4"
-            >Permanenter oder zeitlich begrenzter Portierdienst:</span
-          >
-          <ul>
-            <li>Telefonvermittlung.</li>
-            <li>Auskunfterteilung.</li>
-            <li>Erstellen von Passierscheinen.</li>
-            <li>Kontrolle von COVID-19 Impfnachweisen.</li>
-          </ul>
-          <span class="h5 justify">
-            Portierdienst fällt laut §129 Abs. 5 Z 4 ebenfalls in den
-            Tätigkeitsbereich des Bewachungsgewerbes: „zu den im Abs. 4
-            genannten Tätigkeiten gehören insbesondere auch folgende
-            Tätigkeiten:[…]4. Portierdienste;“
-          </span>
-        </div>
-      </div>
-
-      <div class="service-description-content flex-shrink-1">
-        <div class="service-reference-header text-center">
-          <span class="m-0 h4 text-uppercase text">Referenzen</span>
-        </div>
-        <div class="service-reference-body"></div>
-      </div>
-    </section>
-    <div class="container">
-      <div class="divider"></div>
-  </div>
-    <div class="container contact-section">
-      <div class="contact-form ">
-        <div class="row">
-          <div
-            class="col-md-12 col-lg-6 text-uppercase h2 my-4 contact-form-title"
-          >
-            <span>noch fragen?</span>
-            <span class="text-primary">kontaktieren <span>sie uns</span></span>
-          </div>
-          <form method="POST" class="col-md-12 col-lg-6" action="contactform.php">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label"
-                >Titel:</label
-              >
-              <input
-                type="title"
-                class="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Titel"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label"
-                >Vor und Nachname</label
-              >
-              <input
-                type="name"
-                class="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Vor und Nachname"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label"
-                >Email:</label
-              >
-              <input
-                type="email"
-                class="form-control"
-                id="exampleFormControlInput1"
-                placeholder="name@example.com"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label"
-                >Ihre Nachricht an uns:</label
-              >
-              <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                rows="3"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              class="btn btn-primary my-3 text-uppercase w-100"
-            >
-              formular absenden
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="divider"></div>
-  </div>
-    <!-- Footer-->
-    <div class="footer w-100">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-lg-6">
-            <span class="h6">ASAVE Security Service, Ylva Haberlik e.U.</span>
-            <address>
-              <span>Hauptstrasse 83 - 85</span>
-              <br />
-              <span>A - 4040 Linz</span>
-              <br />
-              <span>+43 732 / 91 81 51</span>
-              <br />
-              <a class="text-black" href="mailto:office@asave.net"
-                >office@asave.net</a
+          <div class="row">
+            <div class="col-12 my-4">
+              <span
+                >© 2002 - 2022 by ASAVE Security Service Ylva Haberlik e.U.</span
               >
               <br />
-            </address>
-          </div>
-          <div class="col-md-12 col-lg-6 footer-terms">
-            <div class="terms-links">
-              <span class="h6">Rechtliches</span>
-              <ul class="footer-list">
-                <li>
-                  <a class="text-black" href="datenschutz.html">Datenschutz</a>
-                </li>
-                <li>
-                  <a class="text-black" href="impressum.html">Impressum</a>
-                </li>
-                <li><a class="text-black" href="agb.html">AGB</a></li>
-              </ul>
+              <span>Urheberrecht by Markus Blaha </span>
+              <br />
+              <span>Designed & developed by Andreas Benz e.U.</span>
+              <br />
             </div>
-            <img id="footer-certificate" src="./assets/imgs/certificate.png" alt="" />
           </div>
         </div>
-        <div class="row">
-          <div class="col-12 my-4">
-            <span
-              >© 2002 - 2022 by ASAVE Security Service Ylva Haberlik e.U.</span
-            >
-            <br />
-            <span>Urheberrecht by Michael Blaha </span>
-            <br />
-            <span>Designed & developed by Andreas Benz e.U.</span>
-            <br />
-          </div>
-        </div>
-      </div>
-    </div>
-        <!-- inject:js -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
-    <!-- endinject -->
-  </body>
+      </footer>
+</footer>
+  
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
 </html>

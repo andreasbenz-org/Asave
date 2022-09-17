@@ -1,0 +1,68 @@
+<section class="container contact-section">
+    <div class="contact-form">
+      <div class="row">
+        <div
+          class="col-md-12 col-lg-6 text-uppercase h2 my-4 contact-form-title"
+        >
+          <span>noch fragen?</span>
+          <span class="text-primary">kontaktieren <span>sie uns</span></span>
+        </div>
+        <form
+          class="col-md-12 col-lg-6"
+          method="POST"
+          action="contactform.php"
+        >
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Titel:</label
+            >
+            <input
+              name="title"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Titel"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Vor und Nachname</label
+            >
+            <input
+              name="name"
+              class="form-control"
+              id="name"
+              placeholder="Vor und Nachname"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Email:</label
+            >
+            <input
+              name="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >Ihre Nachricht an uns:</label
+            >
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary my-3 text-uppercase w-100"
+          >
+            formular absenden
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>

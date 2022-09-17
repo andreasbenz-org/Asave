@@ -1,0 +1,71 @@
+{% set page_name = 'Bewerbungsformular' %}
+{% set SEO_description = 'SSG using Nunjucks and Gulp' %} 
+{% set SEO_keywords = 'SSG, Nunjucks, Gulp, JavaScript' %} 
+{% extends "layouts/layout.html" %} 
+{% block content %}
+    <section class="container iso-hero-section">
+      <div class="formular-hero bg-dark-transparent">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-touch="false"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="4"
+              aria-label="Slide 5"
+            ></button>
+          </div>
+          <form action="apply-form.php"  method="post">
+            <div class="carousel-inner">
+              <div class="carousel-item carouesl-item-formular active">
+                
+              </div>
+              <div class="carousel-item carouesl-item-formular"></div>
+              <div class="carousel-item carouesl-item-formular">
+               
+              </div>
+              <div class="carousel-item carouesl-item-formular"></div>
+
+              <div class="carousel-item carouesl-item-formular">
+                <button
+                  type="submit"
+                  class="btn btn-primary my-3 text-uppercase w-100"
+                >
+                  Formular absenden
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+{% endblock %}

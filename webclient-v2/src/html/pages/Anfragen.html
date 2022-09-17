@@ -1,0 +1,32 @@
+{% set page_name = 'Anfragen' %}
+{% set SEO_description = 'SSG using Nunjucks and Gulp' %} 
+{% set SEO_keywords = 'SSG, Nunjucks, Gulp, JavaScript' %} 
+{% extends "layouts/layout.html" %} 
+{% block content %}
+    <section class="container iso-hero-section">
+      <div class="iso-hero bg-dark-transparent">
+        <div class="iso-hero-image bg-anfragen"></div>
+        <div class="iso-hero-text">
+          <div class="my-3">
+            <span class="h1 text-white text-uppercase"
+              >Jetzt<span class="h1 text-primary text-uppercase"
+                >Anfragen</span
+              ></span
+            >
+          </div>
+          <span class="text-center max-w-600">
+            Erstellen Sie in nur wenigen Schritten ein unverbindliche Anfrage.
+            <br />
+            <br />
+            Sie erhalten spätestens am nächsten Werktag einen kostenlosen und
+            auf Ihre Bedürfnisse zugeschnittenen Kostenvoranschlag.
+          </span>
+          <a
+            href="Anfrageformular.html"
+            class="hero-button btn btn-primary w-100 text-uppercase my-4 px-4n"
+            >Los gehts</a
+          >
+        </div>
+      </div>
+    </section>
+    {% endblock %}

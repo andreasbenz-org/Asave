@@ -5,6 +5,8 @@
     "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-nunjucks-render": "^2.2.3",
     "mini-css-extract-plugin": "^2.6.1"
   }
 }
